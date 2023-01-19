@@ -25,7 +25,7 @@ Create an alarm to control costs (10 min)
 Workshop 2
 1) Create infra:
 2 databases on RDS: SQL Server (production) and Postgres (data warehouse) (1 hour)
-DMS. Create and test connections  (30-45 min)
+DMS. Create and test connections (30-45 min)
 Import data (30 min) 
 
 Workshop 3
