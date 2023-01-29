@@ -2,8 +2,10 @@ Hello Data Talks peeps!
 
 All of the course material will be posted here!
 
-Presentation slides:
-https://docs.google.com/presentation/d/14xoWjsRJLO8B04qzxm4xvdpIrpLY8U5u4LyHlKto-zw/edit?usp=sharing
+[Presentation slides](https://docs.google.com/presentation/d/14xoWjsRJLO8B04qzxm4xvdpIrpLY8U5u4LyHlKto-zw/edit?usp=sharing)
+
+[Dataset example for OLTP and DW](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms)
+
 
 This is the high level plan of what we are going to run:
 
@@ -33,6 +35,9 @@ Create infra:
 - Run simple transformation using AWS Glue (1hr)
 - Visualise data using Quicksight (30 min)
 
+## Workshop 4
+- Continue any activities we haven't finished
+- Keep learning
 
 
 ## Notes
