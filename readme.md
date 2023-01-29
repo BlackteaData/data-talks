@@ -1,6 +1,6 @@
 Hello Data Talks peeps!
 
-All of the course material will be posted here!
+All of the course material will be posted here! This repo is a Work In Progress!
 
 [Presentation slides](https://docs.google.com/presentation/d/14xoWjsRJLO8B04qzxm4xvdpIrpLY8U5u4LyHlKto-zw/edit?usp=sharing)
 
@@ -11,10 +11,10 @@ This is the high level plan of what we are going to run:
 
 ## Workshop 1
 
-- Brief overview of myself (10min)
+- Brief overview (10min)
 - Overview of cloud (15min)
 - Go through the different types of services available in the cloud (15min)
-- Baseline knowledge, covering database, data lake, networking, security (50min)
+- Baseline knowledge, covering database, data lake, ETL process, networking, security (50min)
 - Go through the architecture of the demo, explaining its components and why they are there (20min)
 
 ### Live demo! 
