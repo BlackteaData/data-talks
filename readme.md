@@ -9,7 +9,7 @@ All of the course material will be posted here! This repo is a Work In Progress!
 
 This is the high level plan of what we are going to run:
 
-## Workshop 1
+## [Workshop 1](/workshop1.md)
 
 - Brief overview (10min)
 - Overview of cloud (15min)
@@ -22,20 +22,20 @@ This is the high level plan of what we are going to run:
 - Overview of AWS console (20 min)
 - Create an alarm to control costs (10 min)
 
-## Workshop 2
+## [Workshop 2](/workshop2.md)
 Create infra:
 - 2 databases on RDS: SQL Server (production) and Postgres (data warehouse) (1 hour)
 - DMS. Create and test connections (30-45 min)
 - Import data (30 min) 
 
-## Workshop 3
+## [Workshop 3](/workshop3.md)
 - Move data from production into data warehouse using DMS (20min) 
 - Pull data from external API into our data warehouse (20min)
 - Read data using Athena (20min)
 - Run simple transformation using AWS Glue (1hr)
 - Visualise data using Quicksight (30 min)
 
-## Workshop 4
+## [Workshop 4](/workshop4.md)
 - Continue any activities we haven't finished
 - Keep learning
 

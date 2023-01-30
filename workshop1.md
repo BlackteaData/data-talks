@@ -5,6 +5,12 @@ This is the material and sources covered in Workshop 1
 
 We are using these sources for the [production](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2019.bak) and the [data warehouse](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2019.bak)datasets.
 
+Here are the visual representation of the datasets.
+
+[Transaction](/images/adventureworks2008_schema.gif)
+[Datawarehouse](/images/adventureworksdw2008.png)
+
+
 Task: Copy the .bak files into the RDS SQL Server. This [tutorial](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.Procedural.Importing.html) gives an overview of the process.
 
 
