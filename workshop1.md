@@ -11,8 +11,40 @@ Here are the visual representation of the datasets.
 - [Datawarehouse](/images/adventureworksdw2008.png)
 
 
-Task: Copy the .bak files into the RDS SQL Server. This [tutorial](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.Procedural.Importing.html) gives an overview of the process.
+## Task: 
+Copy the .bak files into the RDS SQL Server. 
+This [tutorial](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.Procedural.Importing.html) gives an overview of the process.
 
+Steps:
+1) Download the two datasources to your local machine.
+2) Save the two .bak files into an S3 bucket.
+3) Restore the datasets into the RDS MSServer, using the commands below. Make sure to change the S3 bucket name.
+
+#### To restore a dataset into RDS SQL Server
+
+Command to restore datasets:
+
+Production DB
+```
+exec msdb.dbo.rds_restore_database
+	@restore_db_name='prod',
+	@s3_arn_to_restore_from='arn:aws:s3:::blacktea/AdventureWorks2019.bak',
+	@with_norecovery=0,
+	@type='FULL';
+```
+
+Data Warehouse
+```
+exec msdb.dbo.rds_restore_database
+	@restore_db_name='dw',
+	@s3_arn_to_restore_from='arn:aws:s3:::blacktea/AdventureWorksDW2019.bak',
+	@with_norecovery=0,
+	@type='FULL';
+```
+
+### Errors and Issues
+
+During the process, you may find some errors. I've highlighted the ones I found and how to fix them.
 
 #### Error 1
 Database backup/restore option is not enabled yet or is in the process of being enabled.
@@ -32,35 +64,17 @@ Message when running the command on the current DB:
 This instance of SQL Server is the Express Edition (64-bit). Change data capture is only available in the Enterprise, Developer, Enterprise Evaluation, and Standard editions.
 
 
-### Endpoints
+### Database Endpoints
+```
 Postgres
 Endpoint: database-2.ceeffbcjqhgn.ap-southeast-2.rds.amazonaws.com
-The user and password are stored on [Secrets Manager](rds!db-031c8c48-80cb-4c2c-86d7-705928bc24d7), but you won't have access to it - we will share the credentials during the workshop. 
+The user and password will be shared during the workshop. 
 
 SQL Server
 Endpoint: production.ceeffbcjqhgn.ap-southeast-2.rds.amazonaws.com
-[User and Password](rds!db-e4f703c3-0169-46bc-9a6c-18be4c755e8e)
-
-
-
-
-#### To restore a dataset into RDS SQL Server
-
-Command to restore datasets:
-
-Production DB
+The user and password will be shared during the workshop. 
 ```
-exec msdb.dbo.rds_restore_database
-	@restore_db_name='prod',
-	@s3_arn_to_restore_from='arn:aws:s3:::blacktea/AdventureWorks2019.bak',
-	@with_norecovery=0,
-	@type='FULL';
-```
-Datawarehouse
-```
-exec msdb.dbo.rds_restore_database
-	@restore_db_name='dw',
-	@s3_arn_to_restore_from='arn:aws:s3:::blacktea/AdventureWorksDW2019.bak',
-	@with_norecovery=0,
-	@type='FULL';
-```
+
+
+
+
