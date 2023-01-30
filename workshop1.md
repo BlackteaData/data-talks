@@ -9,11 +9,20 @@ Task: Copy the .bak files into the RDS SQL Server. This [tutorial](https://docs.
 
 
 #### Error 1
-Database backup/restore option is not enabled yet or is in the process of being enabled
+Database backup/restore option is not enabled yet or is in the process of being enabled.
+
 To fix this issue, I have used these two sources:
 
 [Create an option group](https://stackoverflow.com/questions/57005157/restore-from-s3-bucket-to-sql-server-getting-error-database-backup-restore-optio)
 [AWS Solution](https://aws.amazon.com/premiumsupport/knowledge-center/native-backup-rds-sql-server/)
+
+#### Error 2
+MS-CDC has not been enabled on database
+
+We can't run CDC using this version of MSServer. If you are in the required version, then running the command `EXEC sys.sp_cdc_enable_db` will do the trick.
+
+Message when running the command on the current DB:
+This instance of SQL Server is the Express Edition (64-bit). Change data capture is only available in the Enterprise, Developer, Enterprise Evaluation, and Standard editions.
 
 
 ### Endpoints
