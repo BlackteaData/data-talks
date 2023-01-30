@@ -7,8 +7,8 @@ We are using these sources for the [production](https://github.com/Microsoft/sql
 
 Here are the visual representation of the datasets.
 
-[Transaction](/images/adventureworks2008_schema.gif)
-[Datawarehouse](/images/adventureworksdw2008.png)
+- [Transaction](/images/adventureworks2008_schema.gif)
+- [Datawarehouse](/images/adventureworksdw2008.png)
 
 
 Task: Copy the .bak files into the RDS SQL Server. This [tutorial](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.Procedural.Importing.html) gives an overview of the process.
@@ -28,6 +28,7 @@ MS-CDC has not been enabled on database
 We can't run CDC using this version of MSServer. If you are in the required version, then running the command `EXEC sys.sp_cdc_enable_db` will do the trick.
 
 Message when running the command on the current DB:
+
 This instance of SQL Server is the Express Edition (64-bit). Change data capture is only available in the Enterprise, Developer, Enterprise Evaluation, and Standard editions.
 
 
@@ -45,16 +46,21 @@ Endpoint: production.ceeffbcjqhgn.ap-southeast-2.rds.amazonaws.com
 
 #### To restore a dataset into RDS SQL Server
 
-Command to restore datasets
+Command to restore datasets:
+
+Production DB
+```
 exec msdb.dbo.rds_restore_database
 	@restore_db_name='prod',
 	@s3_arn_to_restore_from='arn:aws:s3:::blacktea/AdventureWorks2019.bak',
 	@with_norecovery=0,
 	@type='FULL';
-
+```
+Datawarehouse
+```
 exec msdb.dbo.rds_restore_database
 	@restore_db_name='dw',
 	@s3_arn_to_restore_from='arn:aws:s3:::blacktea/AdventureWorksDW2019.bak',
 	@with_norecovery=0,
 	@type='FULL';
-
+```
