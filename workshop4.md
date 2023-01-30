@@ -1,5 +1,8 @@
 # Workshop 4
 
-This is the material and sources covered in Workshop 4
+## Agenda
+
+- Continue any activities we haven't finished
+- Keep learning
 
 
