@@ -3,6 +3,6 @@
 ## Agenda
 
 - Continue any activities we haven't finished
-- Keep learning
+- Amazon Aurora zero-ETL integration with Amazon Redshift lab
 
 
