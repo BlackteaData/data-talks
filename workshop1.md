@@ -4,14 +4,14 @@
 
 - Brief overview (10min)
 - Overview of cloud (15min)
-- Go through the different types of services available in the cloud (15min)
-- Baseline knowledge, covering database, data lake, ETL process, networking, security (50min)
-- Go through the architecture of the demo, explaining its components and why they are there (20min)
+- The different types of services available in the cloud (15min)
+- Baseline knowledge: covering database, ETL processes, networking, security (50min)
+- Demo architecture: what we are building and why (20min)
 
-### Live demo! 
-- Create AWS account (40 min)
-- Overview of AWS console focusing on Data Products (20 min)
-- Create an alarm to control costs (10 min)
+## Live demo! 
+- Create AWS account and user setup (40min)
+- Overview of AWS console focusing on Data Products (20min)
+- Create an alarm to control costs (10min)
 
 
 
@@ -21,6 +21,8 @@ Here are the visual representation of the datasets.
 
 - [Transaction](/images/adventureworks2008_schema.gif)
 - [Data Warehouse](/images/adventureworksdw2008.png)
+
+
 
 
 
