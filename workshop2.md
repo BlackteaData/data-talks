@@ -8,8 +8,30 @@ Create infrastructure:
 - Import data (30min)
 - Move data from production database into data warehouse using DMS (20min) 
 
+## Task: Create an S3 bucket
+This bucket will contain the backup database files that will be loaded to the database later on.
 
-## Task: 
+Steps:
+1) Go to S3 console
+2) Write a unique bucket name (name has to be unique among all of the S3 buckets from ALL AWS accounts)
+3) Let all Default configuration
+4) Click `Create Bucket`
+
+## Task: Create an RDS instance
+
+Steps:
+1) Go to RDS console
+2) Click on `Databases` and `Create database` 
+3) Select the desired database engine (we will create a Microsoft SQL Server and PostgreSQL)
+4) We will use the default for most options, paying attention to:
+	a) Credentials settings: Let AWS Secrets Manager to manage the password
+	b) Instance configuration: Select the instance included in the free tier (usually t3.small)
+	c) Select Public access = yes. As we are just learning about RDS and we will delete the instance at the end of this workshop, this option is okay. In real life, the database will be in a Private subnet and only accessible, securely, via resources in the AWS or through a VPN.
+
+This paper goes into more details about each option:
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html
+
+## Task: Load the database 
 Copy the .bak files into the RDS SQL Server. 
 This [tutorial](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.Procedural.Importing.html) gives an overview of the process.
 
