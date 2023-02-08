@@ -3,6 +3,7 @@
 ## Agenda
 
 Create infrastructure:
+- S3 bucket (5min)
 - Two databases on RDS: SQL Server (production) and Postgres (data warehouse) (45min)
 - DMS to import and transform data. Create and test connections (30-45 min)
 - Import data (30min)
@@ -23,10 +24,10 @@ Steps:
 1) Go to RDS console
 2) Click on `Databases` and `Create database` 
 3) Select the desired database engine (we will create a Microsoft SQL Server and PostgreSQL)
-4) We will use the default for most options, paying attention to:
+4) We will use the default for most options. A few items to change:
 	a) Credentials settings: Let AWS Secrets Manager to manage the password
-	b) Instance configuration: Select the instance included in the free tier (usually t3.small)
-	c) Select Public access = yes. As we are just learning about RDS and we will delete the instance at the end of this workshop, this option is okay. In real life, the database will be in a Private subnet and only accessible, securely, via resources in the AWS or through a VPN.
+	b) Instance configuration: Select the instance included in the free tier (usually t3.small). The cost of RDS instances is related to the size and type of the instance, so a larger and more powerful instance equals to a more expensive database. Another factor in the cost is licensing. Oracle and Microsoft charges licensing so you might be in a situation where even though the computer that is running the database is free, but you have to pay for the software that is running on the instance. MySQL and Postgres are open source so no licensing on these two engines.
+	c) Select Public access = yes. As we are just learning about RDS and the data is public available, this option is okay. In real life, the database will be in a Private subnet and only accessible, securely, via resources in the AWS or through a VPN.
 
 This paper goes into more details about each option:
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html
