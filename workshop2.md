@@ -45,6 +45,8 @@ Steps:
 
 Command to restore datasets:
 
+In the first stage, both of these datasets will be restored in the SQL Server database. 
+
 Production DB
 ```
 exec msdb.dbo.rds_restore_database
@@ -85,16 +87,11 @@ Message when running the command on the current DB:
 This instance of SQL Server is the Express Edition (64-bit). Change data capture is only available in the Enterprise, Developer, Enterprise Evaluation, and Standard editions.
 
 
-### Database Endpoints
-```
-Postgres
-Endpoint: database-2.ceeffbcjqhgn.ap-southeast-2.rds.amazonaws.com
-The user and password will be shared during the workshop. 
+### Database Migration Service (DMS)
 
-SQL Server
-Endpoint: production.ceeffbcjqhgn.ap-southeast-2.rds.amazonaws.com
-The user and password will be shared during the workshop. 
-```
+We will now, load the dw database from MSSQL into the PostgreSQL database using DMS.
+
+
 
 ## Notes
 
