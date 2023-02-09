@@ -65,6 +65,12 @@ exec msdb.dbo.rds_restore_database
 	@type='FULL';
 ```
 
+To check the stage of the restore you can run this command (update the ID number of the transaction you have just run):
+
+```
+exec msdb.dbo.rds_task_status @task_id=1;
+```
+
 ### Errors and Issues
 
 During the process, you may find some errors. I've highlighted the ones I found and how to fix them.
