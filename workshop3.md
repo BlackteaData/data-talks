@@ -10,7 +10,6 @@
 
 In this workshop, we will cover AWS native Analytical and Visualisation tools.
 
-
 ## Task: Query a table stored in S3 from Athena
 
 We will query a CSV file from Athena
@@ -21,10 +20,9 @@ We will query a CSV file from Athena
 
 This [page](https://awstip.com/querying-data-from-s3-using-aws-athena-18a41d061d94) provides a good walkthrough of the steps required.
 
-
 ## Task: Create dashboards in Quicksight
 
-Quicksight is the native AWS solution to 
+Quicksight is the native AWS solution to build and share Business Inteligence (BI) dashboards.
 
 1) Enrol in the free trial for Quicksight.
 2) Create two datasources for Quicksight
