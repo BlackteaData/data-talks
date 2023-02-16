@@ -12,11 +12,22 @@ Create infrastructure:
 ## Task: Create an S3 bucket
 This bucket will contain the backup database files that will be loaded to the database later on.
 
-Steps:
-1) Go to S3 console
-2) Write a unique bucket name (name has to be unique among all of the S3 buckets from ALL AWS accounts)
-3) Let all Default configuration
-4) Click `Create Bucket`
+1) Download the two datasources to your local machine.
+2) Go to S3 console
+3) Select Buckets than `Create Bucket`
+4) Write a unique bucket name (name has to be unique among all of the S3 buckets from ALL AWS accounts)
+5) Let all Default configuration and Click `Create Bucket`
+6) Click on the Bucket you just created
+7) Click on the Upload and `Drag and drop` the files you want to upload or choose `Add files`. (Save the two .bak files into the S3 bucket)
+8) Click on `Upload`
+
+## Task: VPC and Security Group
+
+The correct thing would be to create a new VPC and Security Group but for this lab, we will use the default VPC and Security Group.
+
+1) Go to `VPC`, `Security Group` and select the `default` security group.
+2) Select `Inbound rules` and then select `Edit Inbound rules`
+3) Change `Type` to `MSSQL` and `Source` to `My IP`. Then `Add a new Rule` and set the type as `PostgreSQL` and the Source as `My IP` too and click `Save`. 
 
 ## Task: Create an RDS instance
 
@@ -32,14 +43,21 @@ Steps:
 This paper goes into more details about each option:
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html
 
+5) Select the Engine Type `PostgreSQL` and the `Free tier template`. Type a name for your DB instance and select the option `Manage master credentials in AWS Secrets Manager`. Check the `Public Access` option as `Yes` and click on `Create Database`.
+7) While Postgres is being created, let's configure the Group Options for MSSQL. Click `Group Options` and then `Create Group`.
+8) Define a `name and description` for the new group and select the Engine and Version according to the MSSQL version you are going to create and click on create. (We will use `sqlserver-ex version 15`) 
+9) Select the group that was created and click on `Add option`
+10) In option details select `SQLSERVER_BACKUP_RESTORE`. In IAM role select `Create a new role` and give a name for the new role. In S3 destination, select the bucket you created earlier and in Scheduling select `Immediately`. Finally, click on `Add option`.
+11) Now let's create the MSSQL. Go to Database and select `Create New Database`. Select `MSSQL Express Edition` engine `15`.
+12) Define a name for the database, select the `Manage master credentials in AWS Secrets Manager` option. Mark the `Public Access` option as `yes`. In additional settings, in `option group`, select the group that was created earlier and click `Create Database`.   
+
 ## Task: Load the database 
 Copy the .bak files into the RDS SQL Server. 
 This [tutorial](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/SQLServer.Procedural.Importing.html) gives an overview of the process.
 
 Steps:
-1) Download the two datasources to your local machine.
-2) Save the two .bak files into an S3 bucket.
-3) Restore the datasets into the RDS MSServer, using the commands below. Make sure to change the S3 bucket name.
+
+1) Restore the datasets into the RDS MSSQL Server, using the commands below. Make sure to change the S3 bucket name.
 
 #### To restore a dataset into RDS SQL Server
 
