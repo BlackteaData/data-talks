@@ -23,10 +23,9 @@ Here are the visual representation of the datasets.
 - [Data Warehouse](/images/adventureworksdw2008.png)
 
 
+## Here are some links that may help you: <p>
+How to Create and Activate a New AWS Account 
+- https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/
 
-
-
-
-
-
-
+Creating a budget 
+- https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-create.html
