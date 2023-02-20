@@ -46,7 +46,8 @@ Steps:
 7) Define a `name and description` for the new group and select the `Engine` and `Version` according to the MSSQL version you are going to create and click on `create`. (We will use the engine `sqlserver-ex` version `15.00`) ![create_db7](./images/create_db7.png)
 8) In `Options Group`, select the group created and click on `Add option`.![create_db8](./images/create_db8.png)
 9) In option details select `SQLSERVER_BACKUP_RESTORE`. In IAM role select `Create a new role` and give a name for the new role. In S3 destination, select the bucket you created earlier and in Scheduling select `Immediately`. Finally, click on `Add option`.![create_db9](./images/create_db9.png)
-10) Now let's create the MSSQL. Go to Database and select `Create New Database`. Select `MSSQL Express Edition` engine `15`. Define a name and a password for the database. Under Connectivity, check the `Public Access` option as `Yes` and select the `security group` we created earlier (remember to remove the default security group). Under additional settings, in `option group`, select the group that was created earlier and click `Create Database`. 
+10) Now let's create the MSSQL. Go to Database and select `Create New Database`. Select `MSSQL Express Edition` engine `15`. Define a name and a password for the database. Under Connectivity, check the `Public Access` option as `Yes` and select the `security group` we created earlier (remember to remove the default security group). Under additional settings, in `option group`, select the group that was created earlier and click `Create Database`.
+ 
 ![create_db10](./images/create_db10.png)
 	
 
