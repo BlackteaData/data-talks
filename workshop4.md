@@ -33,14 +33,13 @@ For this task we will closely follow this [AWS Glue Studio Workshop](https://cat
 
 ```
 # this creates a temporary variable in the current shell called BUCKET_NAME. 
-```
+
 # for Mac and Linux OS
 export BUCKET_NAME=name_of_bucket 
 # for Windows OS
 set BUCKET_NAME=name_of_bucket 
 # for PowerShell
 $Env:BUCKET_NAME=name_of_bucket 
-```
 
 # this creates a folder in your S3 bucket
 aws s3api put-object --bucket $BUCKET_NAME --key raw/covid_csv/
@@ -50,7 +49,6 @@ aws s3api put-object --bucket $BUCKET_NAME --key curated/
 # this copies the file from a different S3 bucket to your own bucket
 aws s3 cp s3://covid19-lake/enigma-jhu-timeseries/csv/ s3://$BUCKET_NAME/raw/covid_csv/ --recursive --copy-props none
 aws s3 cp s3://blacktea/raw/btcusd_csv/ s3://$BUCKET_NAME/raw/covid_csv/ --recursive --copy-props none
-
 ```
 
 ### Copy files using the AWS Console
