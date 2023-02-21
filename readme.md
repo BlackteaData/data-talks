@@ -9,11 +9,10 @@ All of the course material will be posted here! This repo is WIP (Work In Progre
 
 Link to each workshop:
 
-[Workshop 1](/workshop1.md)
+[Workshop 1 - 02.02.23](/workshop1.md)
 
-[Workshop 2](/workshop2.md)
+[Workshop 2 - 09.02.23](/workshop2.md)
  
-[Workshop 3](/workshop3.md)
+[Workshop 3 - 16.02.23](/workshop3.md)
 
-[Workshop 4](/workshop4.md)
-
+[Workshop 4 - 23.02.23](/workshop4.md)
