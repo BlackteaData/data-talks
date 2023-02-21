@@ -7,8 +7,6 @@
 - Create a Glue Crawler (20min)
 - Read data using Athena (30min)
 - Visualise data using Quicksight (30min)
-- Configure AWS CLI (15min)
-
 
 In this workshop, we will cover AWS native Analytical and Visualisation tools.
 
@@ -58,17 +56,5 @@ Quicksight is the native AWS solution to build and share Business Inteligence (B
 Quicksight will need to have access to the RDS instance. You will need to add the 54.153.249.96/27 CIDR IP range to the RDS Security Group. This is the range (Sydney region) where QuickSight traffic originates from when making outbound connections to databases.
 
 
-## Task 3: Setup the AWS CLI (Command Line Interface)
 
-Besides the user interface, we have used so far, we can also issue commands that modify AWS resources from a command line interface. We are going to run some commands in CLI in the next workshop, so let's set this up now. 
-
-For this we need to configure our credentials. This process will create long term credentials access to your AWS account. This is not the most recommended action (a more secure way would be to only have temporary credentials), but it is still a very popular setup.
-
-In the command line run the following command and paste the information from your IAM user. 
-
-```
-aws configure
-```
-
-If you got an error saying you don't have the aws cli in your computer, go to this [page](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) to install it.
 
