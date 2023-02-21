@@ -12,11 +12,15 @@ Besides the user interface that we have used so far, we can also issue commands 
 For this we need to configure our credentials. This process will create long term credentials access to your AWS account. This is not the most recommended action (a more secure way would be to only have temporary credentials), but it is still a very popular setup.
 
 In the command line run the following command and paste the information from your IAM user. It will ask for the following information:
-`AWS Access Key ID` and `AWS Secret Access Key` = grab these details from the IAM console 
-`Default region name` = ap-southeast-2
-`Default output format` = leave it blank
 
+```
+AWS Access Key ID = grab this from the IAM console 
+AWS Secret Access Key = grab this from the IAM console 
+Default region name = ap-southeast-2
+Default output format = leave it blank
+```
 
+In your preferred shell editor run the following command and follow the prompt.
 ```
 aws configure
 ```
@@ -59,10 +63,12 @@ aws s3 cp s3://blacktea/raw/btcusd_csv/ s3://$BUCKET_NAME/raw/covid_csv/ --recur
     c) curated
 
 2) Download these two files to your local and upload to S3 under the specific folder.
+
     a) [Covid dataset](/files/jhu_csse_covid_19_timeseries_merged.csv) to `raw/covid_csv/`
+
     b) [Bitcoin Marketprice](/files/btcusd_raw.csv) to `raw/btcusd_csv/`
 
 
 ## Task 3: Visualise on Quicksight
 
-We can now, jump in the Quicksight console and create a dashboard for these data.
+We can now jump in the Quicksight console and create a dashboard for these data.
