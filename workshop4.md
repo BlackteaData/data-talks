@@ -53,7 +53,7 @@ aws s3api put-object --bucket $BUCKET_NAME --key curated/
 
 # this copies the file from a different S3 bucket to your own bucket
 aws s3 cp s3://covid19-lake/enigma-jhu-timeseries/csv/ s3://$BUCKET_NAME/raw/covid_csv/ --recursive --copy-props none
-aws s3 cp s3://blacktea/raw/btcusd_csv/ s3://$BUCKET_NAME/raw/covid_csv/ --recursive --copy-props none
+aws s3 cp s3://blacktea/raw/btcusd_csv/btcusd_raw.csv s3://$BUCKET_NAME/raw/covid_csv/
 ```
 
 ### 2a.(alternative) Copy files using the AWS Console
@@ -68,6 +68,33 @@ aws s3 cp s3://blacktea/raw/btcusd_csv/ s3://$BUCKET_NAME/raw/covid_csv/ --recur
     a) [Covid dataset](/files/jhu_csse_covid_19_timeseries_merged.csv) to `raw/covid_csv/`
 
     b) [Bitcoin Marketprice](/files/btcusd_raw.csv) to `raw/btcusd_csv/`
+
+### 2b. Create a Glue Crawler
+
+1) From AWS Console, go to AWS Glue Console by searching for "Glue".
+2) On the left sidebar, choose Crawlers and Add crawler*.
+3) Enter "covid_bitcoin_raw_crawler", click Next.
+4) Leave the options as "Crawler source type: Data stores" and "Repeat crawls of S3 data stores: Crawl all folders", click Next.
+5) In the next window, Ther is a folder icon next to "Include path". Click on this, click on the plus icon next to your bucket, then choose your "raw" folder. Click Next.
+6) Do not add another data store. Click Next.
+7) Choose "Create an IAM role" and type a name: "covid-bitcoin". Click Next.
+8) Leave the "Frequency: Run on demand". Click Next.
+9) Click on Add database. Type the database name: "covid-bitcoin". Create the database. Click Next.
+10) Click Finish.
+
+### 2c. Create a Glue Job
+
+1) From the AWS Glue Console, click on AWS Glue Studio on the left sidebar. We can now create our job by choosing the "Create and manage jobs" option.
+2) Let's start with a "Blank graph" by choosing that option. Then, click Create.
+3) Go to "Job details" tab from the top menu. Name your job: "covid-bitcoin-job".
+4) Choose an IAM role that has access to your S3 buckets.
+
+#### Load Covid data from S3
+
+#### Load Bitcoin data from S3
+
+#### Joining datasets
+
 
 ### Final result
 This is a screenshot of the final glue job.![](./images/glue-job-final.png)
