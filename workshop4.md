@@ -2,7 +2,7 @@
 
 ## Agenda
 
-- Configure AWS CLI (15min)
+- Configure AWS IAM user and CLI (30min)
 - Running ETL using the AWS Glue Studio (Covid 19 and Bitcoin dataset) (2hrs)
 - Visualise on Quicksight (15min)
 

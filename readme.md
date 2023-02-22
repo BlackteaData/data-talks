@@ -1,6 +1,6 @@
 Hello Data Talks peeps!
 
-All of the course material will be posted here! This repo is WIP (Work In Progress) and will be updated as the course progresses!
+All of the course material is here! 
 
 [Presentation slides](https://docs.google.com/presentation/d/14xoWjsRJLO8B04qzxm4xvdpIrpLY8U5u4LyHlKto-zw/edit?usp=sharing)
 
