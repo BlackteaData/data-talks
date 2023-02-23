@@ -60,7 +60,7 @@ aws s3api put-object --bucket $BUCKET_NAME --key curated/
 
 # this copies the file from a different S3 bucket to your own bucket
 aws s3 cp s3://covid19-lake/enigma-jhu-timeseries/csv/ s3://$BUCKET_NAME/raw/covid_csv/ --recursive --copy-props none
-aws s3 cp s3://blacktea/raw/btcusd_csv/btcusd_raw.csv s3://$BUCKET_NAME/raw/covid_csv/
+aws s3 cp s3://blacktea/raw/btcusd_csv/btcusd_raw.csv s3://$BUCKET_NAME/raw/btcusd_csv/
 ```
 
 You will notice, the first copy will be successful but the second one will fail. That is expected as we will cover it now.
@@ -124,6 +124,17 @@ Run the copy command again - it should work now!
 #### Load Covid data from S3
 
 #### Load Bitcoin data from S3
+
+This is the code snipped
+
+```
+from pyspark.sql.functions import split,col
+    df = dfc.select(list(dfc.keys())[0]).toDF()
+    df = df.withColumn("date-only", split(col("date-time")," ").getItem(0))
+    dyf_dmy = DynamicFrame.fromDF(df, glueContext, "remove_time")
+    
+    return(DynamicFrameCollection({"CustomTransform0": dyf_dmy}, glueContext))
+```
 
 #### Joining datasets
 
