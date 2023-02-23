@@ -6,6 +6,13 @@
 - Running ETL using the AWS Glue Studio (Covid 19 and Bitcoin dataset) (2hrs)
 - Visualise on Quicksight (15min)
 
+### Preamble
+Any data projects should only start if we have a particular question that we want to answer! We want to have a purpose and reason why we are transforming and joining datasets together. In this particular case, we are interested to know if Covid (using the number of official confirmed Covid cases) had an effect on the price of Bitcoin. 
+
+We have collected and prepared two datasets (Covid and Bitcoin data) that we will transform and join using a common field between these datasets (date). The transformation will be done using Glue Studio and then we can visualise the results using Quicksight.
+
+
+
 ## Task 1: Setup the AWS CLI (Command Line Interface)
 
 Besides the user interface that we have used so far, we can also issue commands that modify AWS resources from a command line interface. We are going to run some commands directly from the CLI, so let's set this up now. 
