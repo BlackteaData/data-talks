@@ -63,6 +63,31 @@ aws s3 cp s3://covid19-lake/enigma-jhu-timeseries/csv/ s3://$BUCKET_NAME/raw/cov
 aws s3 cp s3://blacktea/raw/btcusd_csv/btcusd_raw.csv s3://$BUCKET_NAME/raw/covid_csv/
 ```
 
+You will notice, the first copy will be successful but the second one will fail. That is expected as we will cover it now.
+
+The first file have been made public available by the owner of the bucket (Johns Hopkins University). The second file is in my personal account and we will have a look at the config now. A lot of current data leaks are coming from misconfigured S3 buckets, so it is good for us to spend some time on this now.
+
+The current best practice to make an object available is via Bucket Policy. We will add the following policy to the source bucket.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AddPerm",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::blacktea/raw/btcusd_csv/*"
+        }
+    ]
+}
+```
+In addition, we will need to uncheck the `Block all public access`. Leave the first two options ticketed, and the last two unticketed. Even though the bucket is now public, only the files contained in the above folder can be freely downloaded. The rest of the objects are still private.
+
+Run the copy command again - it should work now!
+
+
 ### 2a.(alternative) Copy files using the AWS Console
 
 1) Create three subfolders in the bucket:
