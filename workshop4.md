@@ -83,7 +83,7 @@ The current best practice to make an object available is via Bucket Policy. We w
     ]
 }
 ```
-In addition, we will need to uncheck the `Block all public access`. Leave the first two options ticketed, and the last two unticketed. Even though the bucket is now public, only the files contained in the above folder can be freely downloaded. The rest of the objects are still private.
+In addition, we will need to uncheck the `Block all public access`. Leave the first two options ticketed, and the last two unticketed. Even though the bucket is now public, only the files contained in the folder `/raw/btcusd_csv/` can be freely downloaded. The rest of the objects are still private.
 
 Run the copy command again - it should work now!
 
